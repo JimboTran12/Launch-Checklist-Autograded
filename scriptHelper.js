@@ -40,7 +40,8 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
     console.log(validateInput(pilot));
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" ||validateInput(cargoLevel) === "Empty") {
-        document.alert("all fields are required.");
+        window.alert("all fields are required.");
+        console.log("alert")
         
     }
     else {
@@ -51,6 +52,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
             copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
         }   
         if (validateInput(fuelLevel) === "Is a Number" && fuelLevel < 10000) {
+            console.log("low fuel level");
             list.style.visibility = "visible";
             launchStatus.innerHTML = "Shuttle Not Ready for Launch";
             launchStatus.style.color = "red";
